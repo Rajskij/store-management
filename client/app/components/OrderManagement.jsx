@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import { useSocket } from '../hooks/useSocket';
 import { getColor } from '../lib/utils.js';
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
 export default function OrderManagement() {
     const [orders, setOrders] = useState([]);
     const [stores, setStores] = useState([]);
@@ -12,13 +14,13 @@ export default function OrderManagement() {
 
     useEffect(() => {
         async function fetchOrders() {
-            const response = await fetch('http://localhost:4000/orders');
+            const response = await fetch(`${API_URL}/orders`);
             const json = await response.json();
 
             setOrders(json);
         }
         async function fetchStores() {
-            const response = await fetch('http://localhost:4000/stores');
+            const response = await fetch(`${API_URL}/stores`);
             const json = await response.json();
 
             setStores(json);
@@ -56,7 +58,7 @@ export default function OrderManagement() {
             total: (Math.random() * 100).toFixed(2)
         };
 
-        await fetch(`http://localhost:4000/order`, {
+        await fetch(`${API_URL}/order`, {
             method: 'POST',
             body: JSON.stringify(newOrder),
             headers: { 'Content-Type': 'application/json' }
@@ -64,7 +66,7 @@ export default function OrderManagement() {
     }
 
     async function handleDelete(id) {
-        const response = await fetch(`http://localhost:4000/order/${id}`, {
+        const response = await fetch(`${API_URL}/order/${id}`, {
             method: "DELETE"
         });
         const json = await response.json();

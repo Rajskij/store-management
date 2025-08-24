@@ -3,6 +3,8 @@
 import { useEffect, useState, useRef } from 'react';
 import { useSocket } from '../hooks/useSocket';
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
 export default function StoreForm() {
     const [stores, setStores] = useState([]);
     const [formData, setFormData] = useState({
@@ -17,7 +19,7 @@ export default function StoreForm() {
     useEffect(() => {
         // Fetch list of stores from DB
         async function fetchStores() {
-            const response = await fetch('http://localhost:4000/stores');
+            const response = await fetch(`${API_URL}/stores`);
             const json = await response.json();
 
             setStores(json);
@@ -51,7 +53,7 @@ export default function StoreForm() {
     async function handleSubmit(e) {
         e.preventDefault();
 
-        const response = await fetch(`http://localhost:4000/store`, {
+        const response = await fetch(`${API_URL}/store`, {
             method: 'POST',
             body: JSON.stringify(formData),
             headers: { 'Content-Type': 'application/json' }
@@ -62,7 +64,7 @@ export default function StoreForm() {
     };
 
     async function handleDelete(id) {
-        const response = await fetch(`http://localhost:4000/store/${id}`, {
+        const response = await fetch(`${API_URL}/store/${id}`, {
             method: "DELETE"
         });
         const json = await response.json();
