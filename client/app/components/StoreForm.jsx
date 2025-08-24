@@ -136,7 +136,7 @@ export default function StoreForm() {
 
                 <button
                     type="submit"
-                    className="w-1/2 bg-secondary text-white px-4 py-2 rounded-md hover:bg-secondary-muted"
+                    className="w-1/2 bg-secondary text-sm text-white px-2 py-2 rounded-md hover:bg-secondary-muted"
                 >
                     Save Store
                 </button>

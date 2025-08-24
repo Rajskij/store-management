@@ -79,7 +79,7 @@ export default function OrderManagement() {
                 <form onSubmit={handleSubmit} className="rounded-xl shadow-md grid grid-cols-2 gap-4 items-center px-4 py-2">
                     <select
                         id="stores"
-                        className='border border-gray-300 rounded-md p-2 w-full'
+                        className='border border-gray-300 rounded-md px-2 py-2 text-sm'
                         value={selectedStoreId}
                         onChange={(e) => setSelectedStoreId(e.target.value)}
                         required
@@ -90,7 +90,7 @@ export default function OrderManagement() {
                     </select>
                     <button
                         type="submit"
-                        className="bg-secondary text-white w-full px-4 py-2 rounded-md hover:bg-secondary-muted"
+                        className="bg-secondary text-white text-sm w-full px-2 py-2 rounded-md hover:bg-secondary-muted"
                     >
                         New Order
                     </button>
