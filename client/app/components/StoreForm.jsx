@@ -163,6 +163,11 @@ export default function StoreForm() {
                     </div>
                 </div>
             )}
+            {stores.length === 0 && (
+                <div className="text-center py-12 text-gray-500">
+                    <p>No stores yet. Click "Save Store" to create one!</p>
+                </div>
+            )}
         </div>
     );
 }
