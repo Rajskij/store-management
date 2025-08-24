@@ -25,8 +25,8 @@ router.post("/charge-extra", async (req, res) => {
           quantity: 1,
         },
       ],
-      success_url: "http://localhost:3000/success",
-      cancel_url: "http://localhost:3000/cancel",
+      success_url: `${process.env.STRIPE_URL}/success`,
+      cancel_url: `${process.env.STRIPE_URL}/cancel`,
     });
 
     res.json({ id: session.id, url: session.url });
