@@ -28,7 +28,7 @@ export default function Payment() {
 		<div className="pt-6">
 			<h2 className="text-2xl font-bold mb-6">Stripe Payment</h2>
 
-			<div className="bg-white p-6 rounded shadow-md max-w-md mx-auto">
+			<div className="p-6 rounded shadow-md max-w-md mx-auto">
 				<div className="mb-6">
 					<h3 className="text-lg font-semibold mb-2">Charge Extra</h3>
 					<p className="text-gray-600">This will process a payment through Stripe</p>

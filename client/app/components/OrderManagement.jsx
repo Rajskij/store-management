@@ -99,7 +99,7 @@ export default function OrderManagement() {
 
             <div className="grid grid-cols-1 gap-4">
                 {orders.map(order => (
-                    <div key={order.id} className="bg-white p-4 rounded shadow-md border-l-6 border-secondary">
+                    <div key={order.id} className="p-4 rounded shadow-md border-l-6 border-secondary">
                         <div className="flex justify-between items-start">
                             <div>
                                 <div className='flex gap-4'>

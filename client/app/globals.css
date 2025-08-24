@@ -19,7 +19,8 @@
     --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: light) {
+/* COMMENT OUT DARK MODE MEDIA QUERY */
+/* @media (prefers-color-scheme: dark) {
     :root {
         --background: #0a0a0a;
         --foreground: #ededed;
@@ -27,7 +28,7 @@
         --secondary: #7a6ee8;
         --secondary-muted: #544c95;
     }
-}
+} */
 
 body {
     background: var(--background);
