@@ -14,7 +14,6 @@ export default function OrderManagement() {
         async function fetchOrders() {
             const response = await fetch('http://localhost:4000/orders');
             const json = await response.json();
-            console.log(json)
 
             setOrders(json);
         }
@@ -47,22 +46,8 @@ export default function OrderManagement() {
         }
     }, [socket]);
 
-    const createNewOrder = () => {
-        const randomStore = stores[Math.floor(Math.random() * stores.length)];
-        const newOrder = {
-            id: Date.now(),
-            store: randomStore,
-            date: new Date().toLocaleString(),
-            items: Math.floor(Math.random() * 5) + 1,
-            total: (Math.random() * 100).toFixed(2)
-        };
-
-        setOrders([newOrder, ...orders]);
-    };
-
     async function handleSubmit(e) {
         e.preventDefault();
-        // store_id, store_name, items, total
 
         const store = stores.find(store => store.id === parseInt(selectedStoreId));
         const newOrder = { 
@@ -72,13 +57,11 @@ export default function OrderManagement() {
             total: (Math.random() * 100).toFixed(2)
         };
 
-        const response = await fetch(`http://localhost:4000/order`, {
+        await fetch(`http://localhost:4000/order`, {
             method: 'POST',
             body: JSON.stringify(newOrder),
             headers: { 'Content-Type': 'application/json' }
         });
-        const json = await response.json();
-
     }
 
     async function handleDelete(id) {

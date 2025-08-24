@@ -6,6 +6,7 @@ import { configureSocketIO } from './config/socketio.js';
 import { setIOInstance } from './services/socketService.js';
 import storeRouter from './routes/store.js';
 import orderRouter from './routes/order.js';
+import paymentRouter from './routes/payment.js';
 
 // Setup Express, Http Server and Socket.io
 const PORT = process.env.PORT;
@@ -23,6 +24,7 @@ app.use(express.json());
 // Rest APIs
 app.use(storeRouter);
 app.use(orderRouter);
+app.use(paymentRouter);
 
 // Start Server
 server.listen(PORT, () => console.log(`Server is running on port: ${PORT}`));
