@@ -5,9 +5,9 @@ export default function Navbar() {
     <nav className="sticky top-0 p-4 shadow-md z-50 bg-background">
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/">
-          <h1 className="md:text-2xl text-secondary font-bold">Store Manager</h1>
+          <h1 className="md:text-2xl text-md text-secondary font-bold">Store Manager</h1>
         </Link>
-        <div className="space-x-4 md:text-xl">
+        <div className="space-x-4 md:text-xl text-sm">
           <Link href="/" className="hover:text-secondary">
             Home
           </Link>

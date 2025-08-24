@@ -75,7 +75,7 @@ export default function OrderManagement() {
     return (
         <div className="pt-6">
             <div className="flex justify-between items-center mb-6">
-                <h2 className="text-2xl font-bold">Order Management</h2>
+                <h2 className="md:text-2xl font-bold">Order Management</h2>
                 <form onSubmit={handleSubmit} className="rounded-xl shadow-md grid grid-cols-2 gap-4 items-center px-4 py-2">
                     <select
                         id="stores"
@@ -90,7 +90,7 @@ export default function OrderManagement() {
                     </select>
                     <button
                         type="submit"
-                        className="bg-secondary text-white text-sm w-full px-2 py-2 rounded-md hover:bg-secondary-muted"
+                        className="bg-secondary text-white text-sm w-full px-1 py-2 rounded-md hover:bg-secondary-muted"
                     >
                         New Order
                     </button>
@@ -103,18 +103,18 @@ export default function OrderManagement() {
                         <div className="flex justify-between items-start">
                             <div>
                                 <div className='flex gap-4'>
-                                    <h3 className="font-bold text-lg">{order.store_name}</h3>
+                                    <h3 className="font-bold md:text-lg">{order.store_name}</h3>
                                 </div>
                                 <p className="text-gray-600">{order.order_date}</p>
                                 <p>{order.items} items | ${order.total}</p>
                             </div>
-                            <div className='flex flex-col gap-5'>
-                                <span className={`${getColor(order)} text-xs font-semibold px-2.5 py-0.5 my-auto rounded`}>
+                            <div className='flex flex-col gap-5 md:max-w-1/8 w-1/4'>
+                                <span className={`${getColor(order)} text-xs text-center font-semibold px-2.5 py-0.5 my-auto rounded-md`}>
                                     {order.status}
                                 </span>
                                 <button
                                     onClick={() => handleDelete(order.id)}
-                                    className='bg-secondary hover:bg-secondary-muted text-white py-1 px-3 rounded-xl'
+                                    className='bg-secondary hover:bg-secondary-muted text-white text-sm py-1 px-3 rounded-xl'
                                 >
                                     Delete
                                 </button>

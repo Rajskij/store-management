@@ -72,7 +72,7 @@ export default function StoreForm() {
 
     return (
         <div className="pt-6">
-            <h2 className="text-2xl font-bold mb-4">Store Information</h2>
+            <h2 className="md:text-2xl font-bold mb-4">Store Information</h2>
             <form onSubmit={handleSubmit} className="w-full p-6 rounded-xl shadow-md grid grid-cols-2 gap-x-4">
                 <div className="mb-4">
                     <label className="block mb-2" htmlFor="name">
@@ -136,7 +136,7 @@ export default function StoreForm() {
 
                 <button
                     type="submit"
-                    className="w-1/2 bg-secondary text-sm text-white px-2 py-2 rounded-md hover:bg-secondary-muted"
+                    className="md:w-1/4 bg-secondary text-sm text-white px-1 py-2 rounded-md hover:bg-secondary-muted"
                 >
                     Save Store
                 </button>
@@ -144,17 +144,17 @@ export default function StoreForm() {
 
             {stores.length > 0 && (
                 <div className="mt-8">
-                    <h3 className="text-xl font-semibold mb-4">Saved Stores</h3>
+                    <h3 className="md:text-xl font-semibold mb-4">Saved Stores</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         {stores.map(store => (
-                            <div key={store.id} className="p-4 rounded shadow-md">
-                                <h4 className="font-bold text-lg">{store.name}</h4>
+                            <div key={store.id} className="p-4 rounded-xl shadow-md">
+                                <h4 className="font-bold md:text-lg">{store.name}</h4>
                                 <p>{store.address}</p>
                                 <p>{store.phone}</p>
                                 <p>{store.city}</p>
                                 <button
                                     onClick={() => handleDelete(store.id)}
-                                    className="bg-secondary text-white mt-2 py-2 px-4 rounded-xl hover:bg-secondary-muted"
+                                    className="bg-secondary text-white mt-2 py-2 px-4 rounded-md hover:bg-secondary-muted"
                                 >
                                     Delete
                                 </button>

@@ -1,6 +1,6 @@
 # Store Management
 
-A demo project showcasing a **real-time store management**, **real-time order manager** and **stripe payment integration** using **Next.js**, **Express**, **Socket.IO**, and an in-memory **SQLite** database.
+A demo project showcasing a **real-time store management**, **real-time order manager** and **stripe payment integration** using **Next.js**, **Tailwind CSS**, **Express**, **Socket.IO**, and an in-memory **SQLite** database.
 
 ---
 
@@ -21,7 +21,7 @@ Check out the live demo of this application at: [store-menegment](https://store-
 
 ##  Tech Stack
 
-- **Frontend:** Next.js
+- **Frontend:** Next.js, Tailwind CSS
 - **Backend:** Express.js with Socket.IO
 - **Database:** SQLite (in-memory)
 - **Payment:** Stripe Checkout

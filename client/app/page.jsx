@@ -26,11 +26,11 @@ export default function Home() {
 
     return (
         <div className="container mx-auto pt-6">
-            <h1 className="text-2xl font-bold mb-6">Store Management System</h1>
+            <h1 className="md:text-2xl font-bold mb-6">Store Management System</h1>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {pages.map((page, idx) => (
                     <div key={idx} className="flex flex-col justify-between p-6 rounded-lg shadow-md">
-                        <h2 className="text-xl font-semibold mb-3">{page.name}</h2>
+                        <h2 className="md:text-xl font-semibold mb-3">{page.name}</h2>
                         <p className="mb-4">{page.description}</p>
                         <Link href={page.link} className="text-secondary hover:underline">
                             {page.linkName}
