@@ -1,6 +1,12 @@
-# Store Management Demo
+# Store Management
 
 A demo project showcasing a **real-time store management**, **real-time order manager** and **stripe payment integration** using **Next.js**, **Express**, **Socket.IO**, and an in-memory **SQLite** database.
+
+---
+
+## Live Demo
+
+Check out the live demo of this application at: [store-menegment](https://store-menegment.onrender.com/)
 
 ---
 
