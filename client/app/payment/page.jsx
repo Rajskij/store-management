@@ -2,13 +2,15 @@
 
 import { useState } from "react";
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
 export default function Payment() {
 	const [amount, setAmount] = useState(2);
 
 	async function handleSubmit(e) {
 		e.preventDefault();
 		try {
-			const res = await fetch("http://localhost:4000/charge-extra", {
+			const res = await fetch(`${API_URL}/charge-extra`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ amount }),
