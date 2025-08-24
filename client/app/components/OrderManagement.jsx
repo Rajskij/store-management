@@ -104,19 +104,21 @@ export default function OrderManagement() {
                             <div>
                                 <div className='flex gap-4'>
                                     <h3 className="font-bold text-lg">{order.store_name}</h3>
-                                    <span className={`${getColor(order)} text-xs font-semibold px-2.5 py-0.5 my-auto rounded`}>
-                                        {order.status}
-                                    </span>
                                 </div>
                                 <p className="text-gray-600">{order.order_date}</p>
                                 <p>{order.items} items | ${order.total}</p>
                             </div>
-                            <button
-                                onClick={() => handleDelete(order.id)}
-                                className='bg-red-200 hover:bg-red-400 text-xs font-semibold py-1 px-3 rounded'
-                            >
-                                Delete
-                            </button>
+                            <div className='flex flex-col gap-5'>
+                                <span className={`${getColor(order)} text-xs font-semibold px-2.5 py-0.5 my-auto rounded`}>
+                                    {order.status}
+                                </span>
+                                <button
+                                    onClick={() => handleDelete(order.id)}
+                                    className='bg-secondary hover:bg-secondary-muted text-white py-1 px-3 rounded-xl'
+                                >
+                                    Delete
+                                </button>
+                            </div>
                         </div>
                     </div>
                 ))}
