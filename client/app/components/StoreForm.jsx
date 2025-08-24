@@ -29,8 +29,6 @@ export default function StoreForm() {
         if (!socket) return;
 
         socket.on('storeCreated', (data) => {
-            console.log(data);
-            console.log(stores);
             setStores(prev => [...prev, { ...data }]);
         })
         socket.on('storeDeleted', (id) => {
@@ -73,7 +71,7 @@ export default function StoreForm() {
     return (
         <div className="pt-6">
             <h2 className="text-2xl font-bold mb-4">Store Information</h2>
-            <form onSubmit={handleSubmit} className="w-md p-6 rounded-xl shadow-md">
+            <form onSubmit={handleSubmit} className="w-full p-6 rounded-xl shadow-md grid grid-cols-2 gap-x-4">
                 <div className="mb-4">
                     <label className="block mb-2" htmlFor="name">
                         Store Name
@@ -136,7 +134,7 @@ export default function StoreForm() {
 
                 <button
                     type="submit"
-                    className="bg-secondary text-white w-full px-4 py-2 rounded-md hover:bg-secondary-muted"
+                    className="w-1/2 bg-secondary text-white px-4 py-2 rounded-md hover:bg-secondary-muted"
                 >
                     Save Store
                 </button>

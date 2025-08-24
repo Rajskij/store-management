@@ -32,7 +32,6 @@ export default function OrderManagement() {
         if (!socket) return;
 
         socket.on('orderCreated', (order) => {
-            console.log(order);
             setOrders(prev => [...prev, { ...order }]);
         });
 
@@ -50,10 +49,10 @@ export default function OrderManagement() {
         e.preventDefault();
 
         const store = stores.find(store => store.id === parseInt(selectedStoreId));
-        const newOrder = { 
-            store_id: store.id, 
-            store_name: store.name, 
-            items: Math.floor(Math.random() * 5) + 1, 
+        const newOrder = {
+            store_id: store.id,
+            store_name: store.name,
+            items: Math.floor(Math.random() * 5) + 1,
             total: (Math.random() * 100).toFixed(2)
         };
 

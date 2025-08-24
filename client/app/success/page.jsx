@@ -4,11 +4,11 @@ import Link from 'next/link';
 
 export default function Success() {
   return (
-    <div className="min-h-screen bg-gradient-to-br flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full text-center">
+    <div className="min-h-screen flex items-center justify-center p-4">
+      <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full text-center">
         <div className="flex justify-center mb-6">
-          <div className="w-24 h-24 bg-purple-200 rounded-full flex items-center justify-center">
-            <svg className="w-16 h-16 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div className="w-24 h-24 bg-green-200 rounded-full flex items-center justify-center">
+            <svg className="w-16 h-16 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
           </div>
@@ -25,7 +25,7 @@ export default function Success() {
         </div>
         
         <p className="text-gray-600 mb-8">
-          Your payment has been processed successfully. A confirmation email has been sent to your inbox.
+          Your payment has been processed successfully.
         </p>
         
         <div className="flex justify-center mb-8">

@@ -1,15 +1,12 @@
 'use client'
 
-import StripePayment from '../components/StripePayment';
 import { useState } from "react";
 
 export default function Payment() {
-	const [loading, setLoading] = useState(false);
-	const [amount, setAmount] = useState(1);
+	const [amount, setAmount] = useState(2);
 
 	async function handleSubmit(e) {
 		e.preventDefault();
-		setLoading(true);
 		try {
 			const res = await fetch("http://localhost:4000/charge-extra", {
 				method: "POST",
@@ -23,7 +20,6 @@ export default function Payment() {
 		} catch (err) {
 			console.error(err);
 		}
-		setLoading(false);
 	};
 
 	return (
